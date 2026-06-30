@@ -110,26 +110,19 @@ The prototype uses **46 features** across 4 categories:
 ```
 Testing On CTL v8.01/
 │
-├── Data
-│   ├── exo_CTL_08.01.csv          # Full TESS CTL v8.01 catalog (497 MB)
-│   ├── exo_CTL_08.01_header.csv   # Column schema definition
-│   ├── training_sample.csv        # Stratified 1% sample (~95k rows, 5 MB)
-│   ├── category_counts.csv        # Full catalog class distribution stats
-│   ├── predictions.csv            # Model output predictions
-│   └── unknown.csv                # Unlabeled test records
-│
-├── Models
-│   ├── star_classifier.pkl        # Saved XGBoost classifier (~1.8 MB)
-│   └── label_encoder.pkl          # Saved LabelEncoder (class name mapper)
-│
-├── Code
-│   ├── model.ipynb                # Jupyter: EDA + baseline RF + XGBoost training
-│   ├── TESS_Exoplanet_ML_Prototype.py  # Full advanced ML prototype (713 lines)
-│   └── data_output_extract.py     # Utility: extract unique categories from CSV
-│
-└── Documentation
-    ├── README.md                  # This file
-    └── REPORT.md                  # Detailed technical report
+├── exo_CTL_08.01.csv          # Full TESS CTL v8.01 catalog (497 MB)
+├── exo_CTL_08.01_header.csv   # Column schema definition
+├── training_sample.csv        # Stratified 1% sample (~95k rows, 5 MB)
+├── category_counts.csv        # Full catalog class distribution stats
+├── predictions.csv            # Model output predictions
+├── unknown.csv                # Unlabeled test records
+├── star_classifier.pkl        # Saved XGBoost classifier (~1.8 MB)
+├── label_encoder.pkl          # Saved LabelEncoder (class name mapper)
+├── model.ipynb                # Jupyter: EDA + baseline RF + XGBoost training
+├── TESS_Exoplanet_ML_Prototype.py  # Full advanced ML prototype (713 lines)
+├── data_output_extract.py     # Utility: extract unique categories from CSV
+├── README.md                  # This file
+└── REPORT.md                  # Detailed technical report
 ```
 
 ---
@@ -154,20 +147,6 @@ Open `model.ipynb` in Jupyter and run all cells in sequence:
 3. **Cell 3** — Random Forest baseline
 4. **Cell 4** — XGBoost improved model
 5. **Cell 5** — Model inference on unknown data
-
-### Run the Full Prototype
-
-```bash
-python TESS_Exoplanet_ML_Prototype.py
-```
-
-This will:
-- Generate synthetic TIC-cross-matched features
-- Train a Random Forest + Gradient Boosting ensemble
-- Output classification report + confusion matrix
-- Save `prototype_xctl_v8_3class_results.png`
-- Save `xctl_v8_classification_results.csv`
-
 ---
 
 ## Results Summary
