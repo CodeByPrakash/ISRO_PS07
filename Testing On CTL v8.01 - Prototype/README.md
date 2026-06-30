@@ -63,7 +63,7 @@ A stratified 1% sample (~94,883 records) was extracted from the full catalog for
   - Better separation of `planetcandidate` vs `cooldwarfs_v8`
   - Saved to: `star_classifier.pkl`, `label_encoder.pkl`
 
-### Stage 4 — Full Prototype (`TESS_Exoplanet_ML_Prototype.py`)
+### Stage 4 — Full Prototype (`TESS_Exoplanet_ML_Prototype.py`) - underworking
 An advanced, physics-informed end-to-end prototype featuring:
 - Synthetic TIC v8.1 feature cross-match (stellar physics + photometry)
 - Physics-informed feature engineering (color indices, evolutionary indicators)
