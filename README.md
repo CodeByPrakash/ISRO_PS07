@@ -55,6 +55,8 @@
 |------|------|---------|
 | Team Lead | Omprakash Behera | GCE Kalahandi |
 | Member 1 | Anish Prasad | GCE Kalahandi |
+| Member 2 | Apurva Nathrao Sakhare | symbiosis international University Pune |
+| Member 3 | Sujoy Bose | GCE Kalahandi |
 
 ---
 
