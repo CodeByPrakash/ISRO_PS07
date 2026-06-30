@@ -1,7 +1,7 @@
 # TESS Exoplanet Classification using xCTL v8.01
 
-> **Hack2Skill × ISRO Hackathon** — Machine Learning for Stellar Object Classification  
-> Using the TESS Candidate Target List (CTL v8.01) — a real 497 MB astronomical catalog
+> **Hack2Skill × ISRO Hackathon** - Machine Learning for Stellar Object Classification  
+> Using the TESS Candidate Target List (CTL v8.01) - a real 497 MB astronomical catalog
 
 ---
 
@@ -37,7 +37,7 @@ cooldwarfs_v8     →  3,940,291   (41.5%)
 hotsubdwarfs_v8   →      2,855   ( 0.03%)  ← severely imbalanced
 ```
 
->  **Class Imbalance**: `hotsubdwarfs_v8` represents only ~0.03% of the dataset — a key challenge addressed in the ML pipeline.
+>  **Class Imbalance**: `hotsubdwarfs_v8` represents only ~0.03% of the dataset - a key challenge addressed in the ML pipeline.
 
 ### Training Sample
 
@@ -47,23 +47,23 @@ A stratified 1% sample (~94,883 records) was extracted from the full catalog for
 
 ##  ML Pipeline
 
-### Stage 1 — Data Extraction (`model.ipynb`)
+### Stage 1 - Data Extraction (`model.ipynb`)
 - Streams the 497 MB CSV in 500k-row chunks to avoid memory overflow
 - Counts category distributions across all 9M rows
 - Extracts a stratified 1% sample: `training_sample.csv`
 
-### Stage 2 — Baseline Model (`model.ipynb`)
+### Stage 2 - Baseline Model (`model.ipynb`)
 - **Random Forest Classifier** (200 trees, single feature: `priority`)
   - Accuracy: 61%, Weighted F1: 0.57
   - Limitation: `hotsubdwarfs_v8` completely missed (F1=0.00) due to extreme imbalance
 
-### Stage 3 — Improved Model (`model.ipynb`)
+### Stage 3 - Improved Model (`model.ipynb`)
 - **XGBoost Classifier** (300 trees, GPU-accelerated via CUDA)
   - Accuracy: 72%, Weighted F1: 0.72
   - Better separation of `planetcandidate` vs `cooldwarfs_v8`
   - Saved to: `star_classifier.pkl`, `label_encoder.pkl`
 
-### Stage 4 — Full Prototype (`TESS_Exoplanet_ML_Prototype.py`) - underworking
+### Stage 4 - Full Prototype (`TESS_Exoplanet_ML_Prototype.py`) - underworking
 An advanced, physics-informed end-to-end prototype featuring:
 - Synthetic TIC v8.1 feature cross-match (stellar physics + photometry)
 - Physics-informed feature engineering (color indices, evolutionary indicators)
@@ -89,9 +89,9 @@ The prototype uses **46 features** across 4 categories:
 ### Derived Physics-Informed Features
 | Feature | Physical Meaning |
 |---------|-----------------|
-| `J_K` | Near-infrared color index — cool star indicator |
-| `V_K` | Optical-infrared color — hot star indicator |
-| `w1_w2` | WISE thermal color — dust/contamination proxy |
+| `J_K` | Near-infrared color index - cool star indicator |
+| `V_K` | Optical-infrared color - hot star indicator |
+| `w1_w2` | WISE thermal color - dust/contamination proxy |
 | `Teff_logg` | Combined evolutionary state indicator |
 | `rad_mass_ratio` | Stellar density proxy |
 | `lum_Teff4` | Stefan-Boltzmann law consistency check |
@@ -142,11 +142,11 @@ pip install pandas numpy matplotlib seaborn scikit-learn xgboost joblib
 ### Run the Baseline Notebook
 
 Open `model.ipynb` in Jupyter and run all cells in sequence:
-1. **Cell 1** — Category distribution analysis
-2. **Cell 2** — Stratified sample extraction
-3. **Cell 3** — Random Forest baseline
-4. **Cell 4** — XGBoost improved model
-5. **Cell 5** — Model inference on unknown data
+1. **Cell 1** - Category distribution analysis
+2. **Cell 2** - Stratified sample extraction
+3. **Cell 3** - Random Forest baseline
+4. **Cell 4** - XGBoost improved model
+5. **Cell 5** - Model inference on unknown data
 ---
 
 ## Results Summary
