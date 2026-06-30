@@ -1,3 +1,1 @@
-exo_CTL_08.01.csv filter=lfs diff=lfs merge=lfs -text
-Testing[[:space:]]On[[:space:]]CTL[[:space:]]v8.01/exo_CTL_08.01.csv filter=lfs diff=lfs merge=lfs -text
 Testing[[:space:]]On[[:space:]]CTL[[:space:]]v8.01[[:space:]]-[[:space:]]Prototype/exo_CTL_08.01.csv filter=lfs diff=lfs merge=lfs -text
