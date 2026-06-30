@@ -1,6 +1,6 @@
 # ISRO BAH 2026 - PS07: AI-Enabled Exoplanet Detection
 
-> Team: **WarpDrive** | Government College of Engineering Kalahandi
+> Team: **WarpDrive**
 
 ---
 
